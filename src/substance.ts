@@ -5,7 +5,7 @@
 import { createRequire } from "module";
 import { InvalidCASError } from "./exceptions.js";
 
-const require = createRequire(import.meta.url);
+const _require = createRequire(import.meta.url);
 
 interface SubstanceData {
   name: string;
@@ -53,7 +53,7 @@ export class Substance {
 
   private static loadSubstances(): SubstancesDatabase {
     if (Substance.substancesData === null) {
-      Substance.substancesData = require("./data/substances.json");
+      Substance.substancesData = _require("./data/substances.json");
     }
     return Substance.substancesData!;
   }

@@ -4,6 +4,7 @@
 
 import {
   CompanyInfo,
+  companyInfoToDict,
   ConfigurationError,
   HazardGroup,
   InvalidCASError,
@@ -548,5 +549,262 @@ describe("CAS Check Digit Algorithm", () => {
 
   test("water checksum", () => {
     expect(validateCasChecksum("7732-18-5")).toBe(true);
+  });
+});
+
+describe("New Assessment Fields", () => {
+  const createBaseRecord = (
+    overrides: Partial<Parameters<typeof SDSRecord.create>[0]> = {}
+  ) => {
+    const defaults = {
+      title: "Test SDS",
+      productName: "Test Product",
+      substances: [Substance.lookup("7681-52-9")],
+      hazards: HazardGroup.fromCodes(["H314"]),
+      precautions: PrecautionaryGroup.fromCodes(["P280", "P305+P351+P338"]),
+    };
+    return SDSRecord.create({ ...defaults, ...overrides });
+  };
+
+  const createValidatedRecord = (
+    overrides: Partial<Parameters<typeof SDSRecord.create>[0]> = {}
+  ) => {
+    const record = createBaseRecord(overrides);
+    const validator = new RecordValidator();
+    validator.validate(record);
+    return record;
+  };
+
+  // --- Creation tests ---
+
+  test("create with productCode", () => {
+    const record = createBaseRecord({ productCode: "PC-12345" });
+    expect(record.productCode).toBe("PC-12345");
+  });
+
+  test("create with regulationType", () => {
+    const record = createBaseRecord({ regulationType: "REACH" });
+    expect(record.regulationType).toBe("REACH");
+  });
+
+  test("create with language", () => {
+    const record = createBaseRecord({ language: "EN" });
+    expect(record.language).toBe("EN");
+  });
+
+  test("create with rPhrases", () => {
+    const record = createBaseRecord({ rPhrases: ["R20", "R36/37/38"] });
+    expect(record.rPhrases).toEqual(["R20", "R36/37/38"]);
+  });
+
+  test("create with sPhrases", () => {
+    const record = createBaseRecord({ sPhrases: ["S2", "S26"] });
+    expect(record.sPhrases).toEqual(["S2", "S26"]);
+  });
+
+  test("create with reachRegistrationNumbers", () => {
+    const record = createBaseRecord({
+      reachRegistrationNumbers: ["01-2119457558-25-0000"],
+    });
+    expect(record.reachRegistrationNumbers).toEqual([
+      "01-2119457558-25-0000",
+    ]);
+  });
+
+  // --- Default values ---
+
+  test("default values are null", () => {
+    const record = createBaseRecord();
+    expect(record.productCode).toBeNull();
+    expect(record.regulationType).toBeNull();
+    expect(record.language).toBeNull();
+    expect(record.rPhrases).toBeNull();
+    expect(record.sPhrases).toBeNull();
+    expect(record.reachRegistrationNumbers).toBeNull();
+  });
+
+  // --- CompanyInfo website ---
+
+  test("CompanyInfo with website in companyInfoToDict", () => {
+    const company: CompanyInfo = {
+      name: "Test Co",
+      website: "https://example.com",
+    };
+    const d = companyInfoToDict(company);
+    expect(d.website).toBe("https://example.com");
+  });
+
+  test("CompanyInfo without website omits it from dict", () => {
+    const company: CompanyInfo = { name: "Test Co" };
+    const d = companyInfoToDict(company);
+    expect(d.website).toBeUndefined();
+  });
+
+  // --- Type enforcement ---
+
+  test("productCode type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ productCode: 12345 as any })
+    ).toThrow(RecordConstructionError);
+  });
+
+  test("regulationType type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ regulationType: 123 as any })
+    ).toThrow(RecordConstructionError);
+  });
+
+  test("language type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ language: 42 as any })
+    ).toThrow(RecordConstructionError);
+  });
+
+  test("rPhrases type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ rPhrases: "R20" as any })
+    ).toThrow(RecordConstructionError);
+  });
+
+  test("rPhrases element type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ rPhrases: ["R20", 123 as any] })
+    ).toThrow(RecordConstructionError);
+  });
+
+  test("sPhrases type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ sPhrases: "S2" as any })
+    ).toThrow(RecordConstructionError);
+  });
+
+  test("reachRegistrationNumbers type enforcement", () => {
+    expect(() =>
+      createBaseRecord({ reachRegistrationNumbers: "01-123" as any })
+    ).toThrow(RecordConstructionError);
+  });
+
+  // --- Validation ---
+
+  test("productCode too long validation", () => {
+    const record = createBaseRecord({ productCode: "A".repeat(101) });
+    const validator = new RecordValidator();
+    const result = validator.validate(record);
+    expect(result.valid).toBe(false);
+    const errorCodes = result.errors.map((e) => e.code);
+    expect(errorCodes).toContain("PRODUCT_CODE_TOO_LONG");
+  });
+
+  // --- toDict / export ---
+
+  test("new fields in toDict", () => {
+    const record = createBaseRecord({
+      productCode: "PC-001",
+      regulationType: "CLP",
+      language: "DE",
+      rPhrases: ["R20", "R36"],
+      sPhrases: ["S2"],
+      reachRegistrationNumbers: ["01-2119457558-25-0000"],
+    });
+    const d = record.toDict();
+    expect(d.product_code).toBe("PC-001");
+    expect(d.regulation_type).toBe("CLP");
+    expect(d.language).toBe("DE");
+    expect(d.r_phrases).toEqual(["R20", "R36"]);
+    expect(d.s_phrases).toEqual(["S2"]);
+    expect(d.reach_registration_numbers).toEqual(["01-2119457558-25-0000"]);
+  });
+
+  test("new fields absent when null", () => {
+    const record = createBaseRecord();
+    const d = record.toDict();
+    expect(d.product_code).toBeUndefined();
+    expect(d.regulation_type).toBeUndefined();
+    expect(d.language).toBeUndefined();
+    expect(d.r_phrases).toBeUndefined();
+    expect(d.s_phrases).toBeUndefined();
+    expect(d.reach_registration_numbers).toBeUndefined();
+  });
+
+  test("new fields in JSON export", () => {
+    const record = createValidatedRecord({
+      productCode: "PC-001",
+      rPhrases: ["R20"],
+    });
+    const exporter = new RecordExporter();
+    const result = exporter.export(record, "json") as string;
+    const parsed = JSON.parse(result);
+    expect(parsed.product_code).toBe("PC-001");
+    expect(parsed.r_phrases).toEqual(["R20"]);
+  });
+
+  test("new fields in CSV export", () => {
+    const record = createValidatedRecord({
+      productCode: "PC-001",
+      regulationType: "CLP",
+      language: "EN",
+      rPhrases: ["R20", "R36"],
+      sPhrases: ["S2", "S26"],
+      reachRegistrationNumbers: ["01-2119457558-25-0000"],
+    });
+    const exporter = new RecordExporter();
+    const result = exporter.exportBatch([record], "csv") as string;
+    expect(result).toContain("product_code");
+    expect(result).toContain("regulation_type");
+    expect(result).toContain("r_phrases");
+    expect(result).toContain("PC-001");
+    expect(result).toContain("R20; R36");
+  });
+
+  // --- String stripping ---
+
+  test("productCode is stripped", () => {
+    const record = createBaseRecord({ productCode: "  PC-001  " });
+    expect(record.productCode).toBe("PC-001");
+  });
+
+  // --- Full pipeline ---
+
+  test("full pipeline with new fields", () => {
+    const record = SDSRecord.create({
+      title: "Full Pipeline SDS",
+      productName: "Test Chemical",
+      substances: [Substance.lookup("7681-52-9")],
+      hazards: HazardGroup.fromCodes(["H314"]),
+      precautions: PrecautionaryGroup.fromCodes(["P280", "P305+P351+P338"]),
+      manufacturer: {
+        name: "Chemical Corp",
+        website: "https://chemcorp.example.com",
+      },
+      revisionDate: new Date("2024-06-01"),
+      version: "3.0",
+      productCode: "BLEACH-500",
+      regulationType: "CLP",
+      language: "EN",
+      rPhrases: ["R34", "R50"],
+      sPhrases: ["S26", "S45"],
+      reachRegistrationNumbers: ["01-2119457558-25-0000"],
+    });
+    expect(record.validated).toBe(false);
+
+    const validator = new RecordValidator();
+    const result = validator.validate(record);
+    expect(result.valid).toBe(true);
+    expect(record.validated).toBe(true);
+
+    const exporter = new RecordExporter();
+    const output = exporter.export(record, "json") as string;
+    const parsed = JSON.parse(output);
+    expect(parsed.product_code).toBe("BLEACH-500");
+    expect(parsed.regulation_type).toBe("CLP");
+    expect(parsed.language).toBe("EN");
+    expect(parsed.r_phrases).toEqual(["R34", "R50"]);
+    expect(parsed.s_phrases).toEqual(["S26", "S45"]);
+    expect(parsed.reach_registration_numbers).toEqual([
+      "01-2119457558-25-0000",
+    ]);
+    expect((parsed.manufacturer as Record<string, string>).website).toBe(
+      "https://chemcorp.example.com"
+    );
   });
 });

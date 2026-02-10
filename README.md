@@ -50,6 +50,12 @@ const record = SDSRecord.create({
   },
   revisionDate: new Date("2024-01-15"),
   version: "2.1",
+  productCode: "BLEACH-500",
+  regulationType: "CLP",
+  language: "EN",
+  rPhrases: ["R34", "R50"],
+  sPhrases: ["S26", "S45"],
+  reachRegistrationNumbers: ["01-2119457558-25-0000"],
   meta: { extractionConfidence: 0.98 },
 });
 
@@ -182,14 +188,20 @@ precautions.types; // ["prevention", "response"]
 const record = SDSRecord.create({
   title: "Required title",
   productName: "Required product name",
-  substances: [...], // Array of Substance objects
-  hazards: ..., // HazardGroup object
-  precautions: ..., // PrecautionaryGroup object
-  manufacturer: ..., // Optional CompanyInfo
-  supplier: ..., // Optional CompanyInfo
-  revisionDate: ..., // Optional Date
-  version: ..., // Optional string
-  meta: {...}, // Optional object for custom fields
+  substances: [...],              // Array of Substance objects
+  hazards: ...,                   // HazardGroup object
+  precautions: ...,               // PrecautionaryGroup object
+  manufacturer: ...,              // Optional CompanyInfo
+  supplier: ...,                  // Optional CompanyInfo
+  revisionDate: ...,              // Optional Date
+  version: ...,                   // Optional string
+  productCode: ...,               // Optional string
+  regulationType: ...,            // Optional string (e.g. "CLP", "REACH")
+  language: ...,                  // Optional string (e.g. "EN", "DE")
+  rPhrases: [...],                // Optional array of R-phrase strings
+  sPhrases: [...],                // Optional array of S-phrase strings
+  reachRegistrationNumbers: [...], // Optional array of REACH reg. number strings
+  meta: {...},                    // Optional object for custom fields
 });
 ```
 
@@ -201,8 +213,11 @@ const company: CompanyInfo = {
   address: "Optional address",
   phone: "Optional phone",
   email: "Optional email",
+  website: "Optional website URL",
 };
 ```
+
+**Note:** R-phrases and S-phrases are pass-through fields (stored as-is). Unlike H-codes and P-codes, they are not validated against a database.
 
 ### RecordValidator
 

@@ -11,6 +11,9 @@ export default {
       "ts-jest",
       {
         useESM: true,
+        diagnostics: {
+          ignoreCodes: [151002, 2441, 1343],
+        },
       },
     ],
   },

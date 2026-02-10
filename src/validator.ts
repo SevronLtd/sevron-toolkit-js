@@ -80,6 +80,15 @@ export class RecordValidator {
       });
     }
 
+    // Validate product code length
+    if (record.productCode !== null && record.productCode.length > 100) {
+      errors.push({
+        field: "productCode",
+        message: "Product code exceeds maximum length of 100 characters",
+        code: "PRODUCT_CODE_TOO_LONG",
+      });
+    }
+
     // Warn about missing manufacturer and supplier
     if (record.manufacturer === null && record.supplier === null) {
       warnings.push({

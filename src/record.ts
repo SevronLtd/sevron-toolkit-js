@@ -18,6 +18,7 @@ export interface CompanyInfo {
   address?: string;
   phone?: string;
   email?: string;
+  website?: string;
 }
 
 /**
@@ -30,6 +31,7 @@ export function companyInfoToDict(
   if (info.address) result.address = info.address;
   if (info.phone) result.phone = info.phone;
   if (info.email) result.email = info.email;
+  if (info.website) result.website = info.website;
   return result;
 }
 
@@ -44,6 +46,12 @@ export interface SDSRecordCreateParams {
   revisionDate?: Date;
   version?: string;
   meta?: Record<string, unknown>;
+  productCode?: string;
+  regulationType?: string;
+  language?: string;
+  rPhrases?: string[];
+  sPhrases?: string[];
+  reachRegistrationNumbers?: string[];
 }
 
 /**
@@ -63,6 +71,12 @@ export class SDSRecord {
   private readonly _revisionDate: Date | null;
   private readonly _version: string | null;
   private readonly _meta: Record<string, unknown>;
+  private readonly _productCode: string | null;
+  private readonly _regulationType: string | null;
+  private readonly _language: string | null;
+  private readonly _rPhrases: string[] | null;
+  private readonly _sPhrases: string[] | null;
+  private readonly _reachRegistrationNumbers: string[] | null;
   private _validated: boolean = false;
 
   /**
@@ -85,6 +99,12 @@ export class SDSRecord {
     this._revisionDate = params.revisionDate ?? null;
     this._version = params.version ?? null;
     this._meta = params.meta ?? {};
+    this._productCode = params.productCode ?? null;
+    this._regulationType = params.regulationType ?? null;
+    this._language = params.language ?? null;
+    this._rPhrases = params.rPhrases ?? null;
+    this._sPhrases = params.sPhrases ?? null;
+    this._reachRegistrationNumbers = params.reachRegistrationNumbers ?? null;
   }
 
   /**
@@ -103,6 +123,12 @@ export class SDSRecord {
       revisionDate,
       version,
       meta,
+      productCode,
+      regulationType,
+      language,
+      rPhrases,
+      sPhrases,
+      reachRegistrationNumbers,
     } = params;
 
     // Validate title
@@ -203,6 +229,75 @@ export class SDSRecord {
       );
     }
 
+    // Validate optional productCode
+    if (productCode !== undefined && typeof productCode !== "string") {
+      throw new RecordConstructionError(
+        `productCode must be a string or undefined, got ${typeof productCode}`
+      );
+    }
+
+    // Validate optional regulationType
+    if (regulationType !== undefined && typeof regulationType !== "string") {
+      throw new RecordConstructionError(
+        `regulationType must be a string or undefined, got ${typeof regulationType}`
+      );
+    }
+
+    // Validate optional language
+    if (language !== undefined && typeof language !== "string") {
+      throw new RecordConstructionError(
+        `language must be a string or undefined, got ${typeof language}`
+      );
+    }
+
+    // Validate optional rPhrases
+    if (rPhrases !== undefined) {
+      if (!Array.isArray(rPhrases)) {
+        throw new RecordConstructionError(
+          `rPhrases must be an array of strings or undefined, got ${typeof rPhrases}`
+        );
+      }
+      for (let i = 0; i < rPhrases.length; i++) {
+        if (typeof rPhrases[i] !== "string") {
+          throw new RecordConstructionError(
+            `rPhrases[${i}] must be a string, got ${typeof rPhrases[i]}`
+          );
+        }
+      }
+    }
+
+    // Validate optional sPhrases
+    if (sPhrases !== undefined) {
+      if (!Array.isArray(sPhrases)) {
+        throw new RecordConstructionError(
+          `sPhrases must be an array of strings or undefined, got ${typeof sPhrases}`
+        );
+      }
+      for (let i = 0; i < sPhrases.length; i++) {
+        if (typeof sPhrases[i] !== "string") {
+          throw new RecordConstructionError(
+            `sPhrases[${i}] must be a string, got ${typeof sPhrases[i]}`
+          );
+        }
+      }
+    }
+
+    // Validate optional reachRegistrationNumbers
+    if (reachRegistrationNumbers !== undefined) {
+      if (!Array.isArray(reachRegistrationNumbers)) {
+        throw new RecordConstructionError(
+          `reachRegistrationNumbers must be an array of strings or undefined, got ${typeof reachRegistrationNumbers}`
+        );
+      }
+      for (let i = 0; i < reachRegistrationNumbers.length; i++) {
+        if (typeof reachRegistrationNumbers[i] !== "string") {
+          throw new RecordConstructionError(
+            `reachRegistrationNumbers[${i}] must be a string, got ${typeof reachRegistrationNumbers[i]}`
+          );
+        }
+      }
+    }
+
     return new SDSRecord(
       {
         title: title.trim(),
@@ -215,6 +310,12 @@ export class SDSRecord {
         revisionDate,
         version,
         meta,
+        productCode: productCode?.trim(),
+        regulationType: regulationType?.trim(),
+        language: language?.trim(),
+        rPhrases,
+        sPhrases,
+        reachRegistrationNumbers,
       },
       PRIVATE_CONSTRUCTOR
     );
@@ -260,6 +361,30 @@ export class SDSRecord {
     return { ...this._meta };
   }
 
+  get productCode(): string | null {
+    return this._productCode;
+  }
+
+  get regulationType(): string | null {
+    return this._regulationType;
+  }
+
+  get language(): string | null {
+    return this._language;
+  }
+
+  get rPhrases(): string[] | null {
+    return this._rPhrases ? [...this._rPhrases] : null;
+  }
+
+  get sPhrases(): string[] | null {
+    return this._sPhrases ? [...this._sPhrases] : null;
+  }
+
+  get reachRegistrationNumbers(): string[] | null {
+    return this._reachRegistrationNumbers ? [...this._reachRegistrationNumbers] : null;
+  }
+
   get validated(): boolean {
     return this._validated;
   }
@@ -297,6 +422,24 @@ export class SDSRecord {
     }
     if (Object.keys(this._meta).length > 0) {
       result.meta = this._meta;
+    }
+    if (this._productCode) {
+      result.product_code = this._productCode;
+    }
+    if (this._regulationType) {
+      result.regulation_type = this._regulationType;
+    }
+    if (this._language) {
+      result.language = this._language;
+    }
+    if (this._rPhrases) {
+      result.r_phrases = [...this._rPhrases];
+    }
+    if (this._sPhrases) {
+      result.s_phrases = [...this._sPhrases];
+    }
+    if (this._reachRegistrationNumbers) {
+      result.reach_registration_numbers = [...this._reachRegistrationNumbers];
     }
 
     return result;

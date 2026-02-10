@@ -91,6 +91,7 @@ export class RecordExporter {
     const headers = [
       "title",
       "product_name",
+      "product_code",
       "substances_cas",
       "substances_names",
       "hazard_codes",
@@ -102,6 +103,11 @@ export class RecordExporter {
       "supplier_name",
       "revision_date",
       "version",
+      "regulation_type",
+      "language",
+      "r_phrases",
+      "s_phrases",
+      "reach_registration_numbers",
     ];
 
     const escapeField = (field: string): string => {
@@ -123,6 +129,7 @@ export class RecordExporter {
       const row = [
         escapeField(String(record.title || "")),
         escapeField(String(record.product_name || "")),
+        escapeField(String(record.product_code || "")),
         escapeField(substances.map((s) => s.cas_number || "").join("; ")),
         escapeField(substances.map((s) => s.name || "").join("; ")),
         escapeField((hazards.codes || []).join("; ")),
@@ -134,6 +141,11 @@ export class RecordExporter {
         escapeField(supplier.name || ""),
         escapeField(String(record.revision_date || "")),
         escapeField(String(record.version || "")),
+        escapeField(String(record.regulation_type || "")),
+        escapeField(String(record.language || "")),
+        escapeField(((record.r_phrases as string[]) || []).join("; ")),
+        escapeField(((record.s_phrases as string[]) || []).join("; ")),
+        escapeField(((record.reach_registration_numbers as string[]) || []).join("; ")),
       ];
 
       lines.push(row.join(","));

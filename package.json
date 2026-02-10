@@ -1,6 +1,6 @@
 {
   "name": "sevron-toolkit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A toolkit for validating and structuring Safety Data Sheet (SDS) extracted data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
