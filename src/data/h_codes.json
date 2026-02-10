@@ -1,0 +1,522 @@
+{
+  "H200": {
+    "statement": "Unstable explosive",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H201": {
+    "statement": "Explosive; mass explosion hazard",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H202": {
+    "statement": "Explosive; severe projection hazard",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H203": {
+    "statement": "Explosive; fire, blast or projection hazard",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H204": {
+    "statement": "Fire or projection hazard",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H205": {
+    "statement": "May mass explode in fire",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H206": {
+    "statement": "Fire, blast or projection hazard; increased risk of explosion if desensitizing agent is reduced",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H207": {
+    "statement": "Fire or projection hazard; increased risk of explosion if desensitizing agent is reduced",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H208": {
+    "statement": "Fire hazard; increased risk of explosion if desensitizing agent is reduced",
+    "category": "Explosives",
+    "pictogram": "GHS01"
+  },
+  "H220": {
+    "statement": "Extremely flammable gas",
+    "category": "Flammable gases",
+    "pictogram": "GHS02"
+  },
+  "H221": {
+    "statement": "Flammable gas",
+    "category": "Flammable gases",
+    "pictogram": "GHS02"
+  },
+  "H222": {
+    "statement": "Extremely flammable aerosol",
+    "category": "Flammable aerosols",
+    "pictogram": "GHS02"
+  },
+  "H223": {
+    "statement": "Flammable aerosol",
+    "category": "Flammable aerosols",
+    "pictogram": "GHS02"
+  },
+  "H224": {
+    "statement": "Extremely flammable liquid and vapour",
+    "category": "Flammable liquids",
+    "pictogram": "GHS02"
+  },
+  "H225": {
+    "statement": "Highly flammable liquid and vapour",
+    "category": "Flammable liquids",
+    "pictogram": "GHS02"
+  },
+  "H226": {
+    "statement": "Flammable liquid and vapour",
+    "category": "Flammable liquids",
+    "pictogram": "GHS02"
+  },
+  "H227": {
+    "statement": "Combustible liquid",
+    "category": "Flammable liquids",
+    "pictogram": null
+  },
+  "H228": {
+    "statement": "Flammable solid",
+    "category": "Flammable solids",
+    "pictogram": "GHS02"
+  },
+  "H229": {
+    "statement": "Pressurized container: may burst if heated",
+    "category": "Gases under pressure",
+    "pictogram": null
+  },
+  "H230": {
+    "statement": "May react explosively even in the absence of air",
+    "category": "Flammable gases",
+    "pictogram": "GHS02"
+  },
+  "H231": {
+    "statement": "May react explosively even in the absence of air at elevated pressure and/or temperature",
+    "category": "Flammable gases",
+    "pictogram": "GHS02"
+  },
+  "H232": {
+    "statement": "May ignite spontaneously if exposed to air",
+    "category": "Flammable gases",
+    "pictogram": "GHS02"
+  },
+  "H240": {
+    "statement": "Heating may cause an explosion",
+    "category": "Self-reactive substances",
+    "pictogram": "GHS01"
+  },
+  "H241": {
+    "statement": "Heating may cause a fire or explosion",
+    "category": "Self-reactive substances",
+    "pictogram": "GHS01"
+  },
+  "H242": {
+    "statement": "Heating may cause a fire",
+    "category": "Self-reactive substances",
+    "pictogram": "GHS02"
+  },
+  "H250": {
+    "statement": "Catches fire spontaneously if exposed to air",
+    "category": "Pyrophoric liquids/solids",
+    "pictogram": "GHS02"
+  },
+  "H251": {
+    "statement": "Self-heating; may catch fire",
+    "category": "Self-heating substances",
+    "pictogram": "GHS02"
+  },
+  "H252": {
+    "statement": "Self-heating in large quantities; may catch fire",
+    "category": "Self-heating substances",
+    "pictogram": null
+  },
+  "H260": {
+    "statement": "In contact with water releases flammable gases which may ignite spontaneously",
+    "category": "Substances which emit flammable gas",
+    "pictogram": "GHS02"
+  },
+  "H261": {
+    "statement": "In contact with water releases flammable gas",
+    "category": "Substances which emit flammable gas",
+    "pictogram": "GHS02"
+  },
+  "H270": {
+    "statement": "May cause or intensify fire; oxidizer",
+    "category": "Oxidizing gases",
+    "pictogram": "GHS03"
+  },
+  "H271": {
+    "statement": "May cause fire or explosion; strong oxidizer",
+    "category": "Oxidizing liquids/solids",
+    "pictogram": "GHS03"
+  },
+  "H272": {
+    "statement": "May intensify fire; oxidizer",
+    "category": "Oxidizing liquids/solids",
+    "pictogram": "GHS03"
+  },
+  "H280": {
+    "statement": "Contains gas under pressure; may explode if heated",
+    "category": "Gases under pressure",
+    "pictogram": "GHS04"
+  },
+  "H281": {
+    "statement": "Contains refrigerated gas; may cause cryogenic burns or injury",
+    "category": "Gases under pressure",
+    "pictogram": "GHS04"
+  },
+  "H282": {
+    "statement": "Extremely flammable chemical under pressure: May explode if heated",
+    "category": "Chemicals under pressure",
+    "pictogram": "GHS02"
+  },
+  "H283": {
+    "statement": "Flammable chemical under pressure: May explode if heated",
+    "category": "Chemicals under pressure",
+    "pictogram": "GHS02"
+  },
+  "H284": {
+    "statement": "Chemical under pressure: May explode if heated",
+    "category": "Chemicals under pressure",
+    "pictogram": "GHS04"
+  },
+  "H290": {
+    "statement": "May be corrosive to metals",
+    "category": "Corrosive to metals",
+    "pictogram": null
+  },
+  "H300": {
+    "statement": "Fatal if swallowed",
+    "category": "Acute toxicity, oral",
+    "pictogram": "GHS06"
+  },
+  "H301": {
+    "statement": "Toxic if swallowed",
+    "category": "Acute toxicity, oral",
+    "pictogram": "GHS06"
+  },
+  "H302": {
+    "statement": "Harmful if swallowed",
+    "category": "Acute toxicity, oral",
+    "pictogram": "GHS07"
+  },
+  "H303": {
+    "statement": "May be harmful if swallowed",
+    "category": "Acute toxicity, oral",
+    "pictogram": null
+  },
+  "H304": {
+    "statement": "May be fatal if swallowed and enters airways",
+    "category": "Aspiration hazard",
+    "pictogram": "GHS08"
+  },
+  "H305": {
+    "statement": "May be harmful if swallowed and enters airways",
+    "category": "Aspiration hazard",
+    "pictogram": null
+  },
+  "H310": {
+    "statement": "Fatal in contact with skin",
+    "category": "Acute toxicity, dermal",
+    "pictogram": "GHS06"
+  },
+  "H311": {
+    "statement": "Toxic in contact with skin",
+    "category": "Acute toxicity, dermal",
+    "pictogram": "GHS06"
+  },
+  "H312": {
+    "statement": "Harmful in contact with skin",
+    "category": "Acute toxicity, dermal",
+    "pictogram": "GHS07"
+  },
+  "H313": {
+    "statement": "May be harmful in contact with skin",
+    "category": "Acute toxicity, dermal",
+    "pictogram": null
+  },
+  "H314": {
+    "statement": "Causes severe skin burns and eye damage",
+    "category": "Skin corrosion/irritation",
+    "pictogram": "GHS05"
+  },
+  "H315": {
+    "statement": "Causes skin irritation",
+    "category": "Skin corrosion/irritation",
+    "pictogram": "GHS07"
+  },
+  "H316": {
+    "statement": "Causes mild skin irritation",
+    "category": "Skin corrosion/irritation",
+    "pictogram": null
+  },
+  "H317": {
+    "statement": "May cause an allergic skin reaction",
+    "category": "Sensitization, skin",
+    "pictogram": "GHS07"
+  },
+  "H318": {
+    "statement": "Causes serious eye damage",
+    "category": "Serious eye damage/eye irritation",
+    "pictogram": "GHS05"
+  },
+  "H319": {
+    "statement": "Causes serious eye irritation",
+    "category": "Serious eye damage/eye irritation",
+    "pictogram": "GHS07"
+  },
+  "H320": {
+    "statement": "Causes eye irritation",
+    "category": "Serious eye damage/eye irritation",
+    "pictogram": null
+  },
+  "H330": {
+    "statement": "Fatal if inhaled",
+    "category": "Acute toxicity, inhalation",
+    "pictogram": "GHS06"
+  },
+  "H331": {
+    "statement": "Toxic if inhaled",
+    "category": "Acute toxicity, inhalation",
+    "pictogram": "GHS06"
+  },
+  "H332": {
+    "statement": "Harmful if inhaled",
+    "category": "Acute toxicity, inhalation",
+    "pictogram": "GHS07"
+  },
+  "H333": {
+    "statement": "May be harmful if inhaled",
+    "category": "Acute toxicity, inhalation",
+    "pictogram": null
+  },
+  "H334": {
+    "statement": "May cause allergy or asthma symptoms or breathing difficulties if inhaled",
+    "category": "Sensitization, respiratory",
+    "pictogram": "GHS08"
+  },
+  "H335": {
+    "statement": "May cause respiratory irritation",
+    "category": "STOT, single exposure",
+    "pictogram": "GHS07"
+  },
+  "H336": {
+    "statement": "May cause drowsiness or dizziness",
+    "category": "STOT, single exposure",
+    "pictogram": "GHS07"
+  },
+  "H340": {
+    "statement": "May cause genetic defects",
+    "category": "Germ cell mutagenicity",
+    "pictogram": "GHS08"
+  },
+  "H341": {
+    "statement": "Suspected of causing genetic defects",
+    "category": "Germ cell mutagenicity",
+    "pictogram": "GHS08"
+  },
+  "H350": {
+    "statement": "May cause cancer",
+    "category": "Carcinogenicity",
+    "pictogram": "GHS08"
+  },
+  "H350i": {
+    "statement": "May cause cancer by inhalation",
+    "category": "Carcinogenicity",
+    "pictogram": "GHS08"
+  },
+  "H351": {
+    "statement": "Suspected of causing cancer",
+    "category": "Carcinogenicity",
+    "pictogram": "GHS08"
+  },
+  "H360": {
+    "statement": "May damage fertility or the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H360D": {
+    "statement": "May damage the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H360F": {
+    "statement": "May damage fertility",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H360FD": {
+    "statement": "May damage fertility. May damage the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H360Fd": {
+    "statement": "May damage fertility. Suspected of damaging the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H360Df": {
+    "statement": "May damage the unborn child. Suspected of damaging fertility",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H361": {
+    "statement": "Suspected of damaging fertility or the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H361d": {
+    "statement": "Suspected of damaging the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H361f": {
+    "statement": "Suspected of damaging fertility",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H361fd": {
+    "statement": "Suspected of damaging fertility. Suspected of damaging the unborn child",
+    "category": "Reproductive toxicity",
+    "pictogram": "GHS08"
+  },
+  "H362": {
+    "statement": "May cause harm to breast-fed children",
+    "category": "Reproductive toxicity",
+    "pictogram": null
+  },
+  "H370": {
+    "statement": "Causes damage to organs",
+    "category": "STOT, single exposure",
+    "pictogram": "GHS08"
+  },
+  "H371": {
+    "statement": "May cause damage to organs",
+    "category": "STOT, single exposure",
+    "pictogram": "GHS08"
+  },
+  "H372": {
+    "statement": "Causes damage to organs through prolonged or repeated exposure",
+    "category": "STOT, repeated exposure",
+    "pictogram": "GHS08"
+  },
+  "H373": {
+    "statement": "May cause damage to organs through prolonged or repeated exposure",
+    "category": "STOT, repeated exposure",
+    "pictogram": "GHS08"
+  },
+  "H400": {
+    "statement": "Very toxic to aquatic life",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": "GHS09"
+  },
+  "H401": {
+    "statement": "Toxic to aquatic life",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": null
+  },
+  "H402": {
+    "statement": "Harmful to aquatic life",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": null
+  },
+  "H410": {
+    "statement": "Very toxic to aquatic life with long lasting effects",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": "GHS09"
+  },
+  "H411": {
+    "statement": "Toxic to aquatic life with long lasting effects",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": "GHS09"
+  },
+  "H412": {
+    "statement": "Harmful to aquatic life with long lasting effects",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": null
+  },
+  "H413": {
+    "statement": "May cause long lasting harmful effects to aquatic life",
+    "category": "Hazardous to the aquatic environment",
+    "pictogram": null
+  },
+  "H420": {
+    "statement": "Harms public health and the environment by destroying ozone in the upper atmosphere",
+    "category": "Hazardous to the ozone layer",
+    "pictogram": "GHS07"
+  },
+  "H300+H310": {
+    "statement": "Fatal if swallowed or in contact with skin",
+    "category": "Acute toxicity, oral/dermal",
+    "pictogram": "GHS06"
+  },
+  "H300+H330": {
+    "statement": "Fatal if swallowed or if inhaled",
+    "category": "Acute toxicity, oral/inhalation",
+    "pictogram": "GHS06"
+  },
+  "H310+H330": {
+    "statement": "Fatal in contact with skin or if inhaled",
+    "category": "Acute toxicity, dermal/inhalation",
+    "pictogram": "GHS06"
+  },
+  "H300+H310+H330": {
+    "statement": "Fatal if swallowed, in contact with skin or if inhaled",
+    "category": "Acute toxicity, oral/dermal/inhalation",
+    "pictogram": "GHS06"
+  },
+  "H301+H311": {
+    "statement": "Toxic if swallowed or in contact with skin",
+    "category": "Acute toxicity, oral/dermal",
+    "pictogram": "GHS06"
+  },
+  "H301+H331": {
+    "statement": "Toxic if swallowed or if inhaled",
+    "category": "Acute toxicity, oral/inhalation",
+    "pictogram": "GHS06"
+  },
+  "H311+H331": {
+    "statement": "Toxic in contact with skin or if inhaled",
+    "category": "Acute toxicity, dermal/inhalation",
+    "pictogram": "GHS06"
+  },
+  "H301+H311+H331": {
+    "statement": "Toxic if swallowed, in contact with skin or if inhaled",
+    "category": "Acute toxicity, oral/dermal/inhalation",
+    "pictogram": "GHS06"
+  },
+  "H302+H312": {
+    "statement": "Harmful if swallowed or in contact with skin",
+    "category": "Acute toxicity, oral/dermal",
+    "pictogram": "GHS07"
+  },
+  "H302+H332": {
+    "statement": "Harmful if swallowed or if inhaled",
+    "category": "Acute toxicity, oral/inhalation",
+    "pictogram": "GHS07"
+  },
+  "H312+H332": {
+    "statement": "Harmful in contact with skin or if inhaled",
+    "category": "Acute toxicity, dermal/inhalation",
+    "pictogram": "GHS07"
+  },
+  "H302+H312+H332": {
+    "statement": "Harmful if swallowed, in contact with skin or if inhaled",
+    "category": "Acute toxicity, oral/dermal/inhalation",
+    "pictogram": "GHS07"
+  },
+  "H314+H318": {
+    "statement": "Causes severe skin burns and eye damage",
+    "category": "Skin corrosion/serious eye damage",
+    "pictogram": "GHS05"
+  }
+}

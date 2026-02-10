@@ -1,0 +1,534 @@
+{
+  "P101": {
+    "statement": "If medical advice is needed, have product container or label at hand",
+    "type": "general"
+  },
+  "P102": {
+    "statement": "Keep out of reach of children",
+    "type": "general"
+  },
+  "P103": {
+    "statement": "Read carefully and follow all instructions",
+    "type": "general"
+  },
+  "P201": {
+    "statement": "Obtain special instructions before use",
+    "type": "prevention"
+  },
+  "P202": {
+    "statement": "Do not handle until all safety precautions have been read and understood",
+    "type": "prevention"
+  },
+  "P210": {
+    "statement": "Keep away from heat, hot surfaces, sparks, open flames and other ignition sources. No smoking",
+    "type": "prevention"
+  },
+  "P211": {
+    "statement": "Do not spray on an open flame or other ignition source",
+    "type": "prevention"
+  },
+  "P212": {
+    "statement": "Avoid heating under confinement or reduction of the desensitizing agent",
+    "type": "prevention"
+  },
+  "P220": {
+    "statement": "Keep away from clothing and other combustible materials",
+    "type": "prevention"
+  },
+  "P222": {
+    "statement": "Do not allow contact with air",
+    "type": "prevention"
+  },
+  "P223": {
+    "statement": "Do not allow contact with water",
+    "type": "prevention"
+  },
+  "P230": {
+    "statement": "Keep wetted with...",
+    "type": "prevention"
+  },
+  "P231": {
+    "statement": "Handle and store contents under inert gas/...",
+    "type": "prevention"
+  },
+  "P232": {
+    "statement": "Protect from moisture",
+    "type": "prevention"
+  },
+  "P233": {
+    "statement": "Keep container tightly closed",
+    "type": "prevention"
+  },
+  "P234": {
+    "statement": "Keep only in original packaging",
+    "type": "prevention"
+  },
+  "P235": {
+    "statement": "Keep cool",
+    "type": "prevention"
+  },
+  "P240": {
+    "statement": "Ground and bond container and receiving equipment",
+    "type": "prevention"
+  },
+  "P241": {
+    "statement": "Use explosion-proof [electrical/ventilating/lighting/.../] equipment",
+    "type": "prevention"
+  },
+  "P242": {
+    "statement": "Use non-sparking tools",
+    "type": "prevention"
+  },
+  "P243": {
+    "statement": "Take action to prevent static discharges",
+    "type": "prevention"
+  },
+  "P244": {
+    "statement": "Keep valves and fittings free from oil and grease",
+    "type": "prevention"
+  },
+  "P250": {
+    "statement": "Do not subject to grinding/shock/friction/...",
+    "type": "prevention"
+  },
+  "P251": {
+    "statement": "Do not pierce or burn, even after use",
+    "type": "prevention"
+  },
+  "P260": {
+    "statement": "Do not breathe dust/fume/gas/mist/vapours/spray",
+    "type": "prevention"
+  },
+  "P261": {
+    "statement": "Avoid breathing dust/fume/gas/mist/vapours/spray",
+    "type": "prevention"
+  },
+  "P262": {
+    "statement": "Do not get in eyes, on skin, or on clothing",
+    "type": "prevention"
+  },
+  "P263": {
+    "statement": "Avoid contact during pregnancy and while nursing",
+    "type": "prevention"
+  },
+  "P264": {
+    "statement": "Wash ... thoroughly after handling",
+    "type": "prevention"
+  },
+  "P270": {
+    "statement": "Do not eat, drink or smoke when using this product",
+    "type": "prevention"
+  },
+  "P271": {
+    "statement": "Use only outdoors or in a well-ventilated area",
+    "type": "prevention"
+  },
+  "P272": {
+    "statement": "Contaminated work clothing should not be allowed out of the workplace",
+    "type": "prevention"
+  },
+  "P273": {
+    "statement": "Avoid release to the environment",
+    "type": "prevention"
+  },
+  "P280": {
+    "statement": "Wear protective gloves/protective clothing/eye protection/face protection",
+    "type": "prevention"
+  },
+  "P281": {
+    "statement": "Use personal protective equipment as required",
+    "type": "prevention"
+  },
+  "P282": {
+    "statement": "Wear cold insulating gloves and either face shield or eye protection",
+    "type": "prevention"
+  },
+  "P283": {
+    "statement": "Wear fire resistant or flame retardant clothing",
+    "type": "prevention"
+  },
+  "P284": {
+    "statement": "[In case of inadequate ventilation] wear respiratory protection",
+    "type": "prevention"
+  },
+  "P285": {
+    "statement": "In case of inadequate ventilation wear respiratory protection",
+    "type": "prevention"
+  },
+  "P301": {
+    "statement": "IF SWALLOWED:",
+    "type": "response"
+  },
+  "P302": {
+    "statement": "IF ON SKIN:",
+    "type": "response"
+  },
+  "P303": {
+    "statement": "IF ON SKIN (or hair):",
+    "type": "response"
+  },
+  "P304": {
+    "statement": "IF INHALED:",
+    "type": "response"
+  },
+  "P305": {
+    "statement": "IF IN EYES:",
+    "type": "response"
+  },
+  "P306": {
+    "statement": "IF ON CLOTHING:",
+    "type": "response"
+  },
+  "P308": {
+    "statement": "IF exposed or concerned:",
+    "type": "response"
+  },
+  "P310": {
+    "statement": "Immediately call a POISON CENTER/doctor/...",
+    "type": "response"
+  },
+  "P311": {
+    "statement": "Call a POISON CENTER/doctor/...",
+    "type": "response"
+  },
+  "P312": {
+    "statement": "Call a POISON CENTER/doctor/.../if you feel unwell",
+    "type": "response"
+  },
+  "P313": {
+    "statement": "Get medical advice/attention",
+    "type": "response"
+  },
+  "P314": {
+    "statement": "Get medical advice/attention if you feel unwell",
+    "type": "response"
+  },
+  "P315": {
+    "statement": "Get immediate medical advice/attention",
+    "type": "response"
+  },
+  "P320": {
+    "statement": "Specific treatment is urgent (see ... on this label)",
+    "type": "response"
+  },
+  "P321": {
+    "statement": "Specific treatment (see ... on this label)",
+    "type": "response"
+  },
+  "P330": {
+    "statement": "Rinse mouth",
+    "type": "response"
+  },
+  "P331": {
+    "statement": "Do NOT induce vomiting",
+    "type": "response"
+  },
+  "P332": {
+    "statement": "If skin irritation occurs:",
+    "type": "response"
+  },
+  "P333": {
+    "statement": "If skin irritation or rash occurs:",
+    "type": "response"
+  },
+  "P334": {
+    "statement": "Immerse in cool water [or wrap in wet bandages]",
+    "type": "response"
+  },
+  "P335": {
+    "statement": "Brush off loose particles from skin",
+    "type": "response"
+  },
+  "P336": {
+    "statement": "Thaw frosted parts with lukewarm water. Do not rub affected area",
+    "type": "response"
+  },
+  "P337": {
+    "statement": "If eye irritation persists:",
+    "type": "response"
+  },
+  "P338": {
+    "statement": "Remove contact lenses, if present and easy to do. Continue rinsing",
+    "type": "response"
+  },
+  "P340": {
+    "statement": "Remove person to fresh air and keep comfortable for breathing",
+    "type": "response"
+  },
+  "P342": {
+    "statement": "If experiencing respiratory symptoms:",
+    "type": "response"
+  },
+  "P351": {
+    "statement": "Rinse cautiously with water for several minutes",
+    "type": "response"
+  },
+  "P352": {
+    "statement": "Wash with plenty of water/...",
+    "type": "response"
+  },
+  "P353": {
+    "statement": "Rinse skin with water [or shower]",
+    "type": "response"
+  },
+  "P360": {
+    "statement": "Rinse immediately contaminated clothing and skin with plenty of water before removing clothes",
+    "type": "response"
+  },
+  "P361": {
+    "statement": "Take off immediately all contaminated clothing",
+    "type": "response"
+  },
+  "P362": {
+    "statement": "Take off contaminated clothing",
+    "type": "response"
+  },
+  "P363": {
+    "statement": "Wash contaminated clothing before reuse",
+    "type": "response"
+  },
+  "P364": {
+    "statement": "And wash it before reuse",
+    "type": "response"
+  },
+  "P370": {
+    "statement": "In case of fire:",
+    "type": "response"
+  },
+  "P371": {
+    "statement": "In case of major fire and large quantities:",
+    "type": "response"
+  },
+  "P372": {
+    "statement": "Explosion risk",
+    "type": "response"
+  },
+  "P373": {
+    "statement": "DO NOT fight fire when fire reaches explosives",
+    "type": "response"
+  },
+  "P374": {
+    "statement": "Fight fire with normal precautions from a reasonable distance",
+    "type": "response"
+  },
+  "P375": {
+    "statement": "Fight fire remotely due to the risk of explosion",
+    "type": "response"
+  },
+  "P376": {
+    "statement": "Stop leak if safe to do so",
+    "type": "response"
+  },
+  "P377": {
+    "statement": "Leaking gas fire: Do not extinguish, unless leak can be stopped safely",
+    "type": "response"
+  },
+  "P378": {
+    "statement": "Use ... to extinguish",
+    "type": "response"
+  },
+  "P380": {
+    "statement": "Evacuate area",
+    "type": "response"
+  },
+  "P381": {
+    "statement": "In case of leakage, eliminate all ignition sources",
+    "type": "response"
+  },
+  "P390": {
+    "statement": "Absorb spillage to prevent material damage",
+    "type": "response"
+  },
+  "P391": {
+    "statement": "Collect spillage",
+    "type": "response"
+  },
+  "P301+P310": {
+    "statement": "IF SWALLOWED: Immediately call a POISON CENTER/doctor/...",
+    "type": "response"
+  },
+  "P301+P312": {
+    "statement": "IF SWALLOWED: Call a POISON CENTER/doctor/.../if you feel unwell",
+    "type": "response"
+  },
+  "P301+P330+P331": {
+    "statement": "IF SWALLOWED: Rinse mouth. Do NOT induce vomiting",
+    "type": "response"
+  },
+  "P302+P334": {
+    "statement": "IF ON SKIN: Immerse in cool water or wrap in wet bandages",
+    "type": "response"
+  },
+  "P302+P350": {
+    "statement": "IF ON SKIN: Gently wash with plenty of soap and water",
+    "type": "response"
+  },
+  "P302+P352": {
+    "statement": "IF ON SKIN: Wash with plenty of water/...",
+    "type": "response"
+  },
+  "P303+P361+P353": {
+    "statement": "IF ON SKIN (or hair): Take off immediately all contaminated clothing. Rinse skin with water [or shower]",
+    "type": "response"
+  },
+  "P304+P312": {
+    "statement": "IF INHALED: Call a POISON CENTER/doctor/.../if you feel unwell",
+    "type": "response"
+  },
+  "P304+P340": {
+    "statement": "IF INHALED: Remove person to fresh air and keep comfortable for breathing",
+    "type": "response"
+  },
+  "P304+P341": {
+    "statement": "IF INHALED: If breathing is difficult, remove person to fresh air and keep comfortable for breathing",
+    "type": "response"
+  },
+  "P305+P351+P338": {
+    "statement": "IF IN EYES: Rinse cautiously with water for several minutes. Remove contact lenses, if present and easy to do. Continue rinsing",
+    "type": "response"
+  },
+  "P306+P360": {
+    "statement": "IF ON CLOTHING: Rinse immediately contaminated clothing and skin with plenty of water before removing clothes",
+    "type": "response"
+  },
+  "P308+P311": {
+    "statement": "IF exposed or concerned: Call a POISON CENTER/doctor/...",
+    "type": "response"
+  },
+  "P308+P313": {
+    "statement": "IF exposed or concerned: Get medical advice/attention",
+    "type": "response"
+  },
+  "P332+P313": {
+    "statement": "If skin irritation occurs: Get medical advice/attention",
+    "type": "response"
+  },
+  "P333+P313": {
+    "statement": "If skin irritation or rash occurs: Get medical advice/attention",
+    "type": "response"
+  },
+  "P336+P315": {
+    "statement": "Thaw frosted parts with lukewarm water. Do not rub affected area. Get immediate medical advice/attention",
+    "type": "response"
+  },
+  "P337+P313": {
+    "statement": "If eye irritation persists: Get medical advice/attention",
+    "type": "response"
+  },
+  "P342+P311": {
+    "statement": "If experiencing respiratory symptoms: Call a POISON CENTER/doctor/...",
+    "type": "response"
+  },
+  "P361+P364": {
+    "statement": "Take off immediately all contaminated clothing and wash it before reuse",
+    "type": "response"
+  },
+  "P362+P364": {
+    "statement": "Take off contaminated clothing and wash it before reuse",
+    "type": "response"
+  },
+  "P370+P376": {
+    "statement": "In case of fire: Stop leak if safe to do so",
+    "type": "response"
+  },
+  "P370+P378": {
+    "statement": "In case of fire: Use ... to extinguish",
+    "type": "response"
+  },
+  "P370+P380": {
+    "statement": "In case of fire: Evacuate area",
+    "type": "response"
+  },
+  "P370+P380+P375": {
+    "statement": "In case of fire: Evacuate area. Fight fire remotely due to the risk of explosion",
+    "type": "response"
+  },
+  "P371+P380+P375": {
+    "statement": "In case of major fire and large quantities: Evacuate area. Fight fire remotely due to the risk of explosion",
+    "type": "response"
+  },
+  "P401": {
+    "statement": "Store in accordance with...",
+    "type": "storage"
+  },
+  "P402": {
+    "statement": "Store in a dry place",
+    "type": "storage"
+  },
+  "P403": {
+    "statement": "Store in a well-ventilated place",
+    "type": "storage"
+  },
+  "P404": {
+    "statement": "Store in a closed container",
+    "type": "storage"
+  },
+  "P405": {
+    "statement": "Store locked up",
+    "type": "storage"
+  },
+  "P406": {
+    "statement": "Store in corrosive resistant/... container with a resistant inner liner",
+    "type": "storage"
+  },
+  "P407": {
+    "statement": "Maintain air gap between stacks or pallets",
+    "type": "storage"
+  },
+  "P410": {
+    "statement": "Protect from sunlight",
+    "type": "storage"
+  },
+  "P411": {
+    "statement": "Store at temperatures not exceeding ... °C/... °F",
+    "type": "storage"
+  },
+  "P412": {
+    "statement": "Do not expose to temperatures exceeding 50 °C/122 °F",
+    "type": "storage"
+  },
+  "P413": {
+    "statement": "Store bulk masses greater than ... kg/... lbs at temperatures not exceeding ... °C/... °F",
+    "type": "storage"
+  },
+  "P420": {
+    "statement": "Store separately",
+    "type": "storage"
+  },
+  "P422": {
+    "statement": "Store contents under...",
+    "type": "storage"
+  },
+  "P402+P404": {
+    "statement": "Store in a dry place. Store in a closed container",
+    "type": "storage"
+  },
+  "P403+P233": {
+    "statement": "Store in a well-ventilated place. Keep container tightly closed",
+    "type": "storage"
+  },
+  "P403+P235": {
+    "statement": "Store in a well-ventilated place. Keep cool",
+    "type": "storage"
+  },
+  "P410+P403": {
+    "statement": "Protect from sunlight. Store in a well-ventilated place",
+    "type": "storage"
+  },
+  "P410+P412": {
+    "statement": "Protect from sunlight. Do not expose to temperatures exceeding 50 °C/122 °F",
+    "type": "storage"
+  },
+  "P501": {
+    "statement": "Dispose of contents/container to...",
+    "type": "disposal"
+  },
+  "P502": {
+    "statement": "Refer to manufacturer or supplier for information on recovery or recycling",
+    "type": "disposal"
+  },
+  "P503": {
+    "statement": "Refer to manufacturer/supplier/... for information on disposal/recovery/recycling",
+    "type": "disposal"
+  }
+}
