@@ -157,9 +157,6 @@ export class SDSRecord {
         `substances must be an array, got ${typeof substances}`
       );
     }
-    if (substances.length === 0) {
-      throw new RecordConstructionError("substances array cannot be empty");
-    }
     for (let i = 0; i < substances.length; i++) {
       if (!(substances[i] instanceof Substance)) {
         throw new RecordConstructionError(

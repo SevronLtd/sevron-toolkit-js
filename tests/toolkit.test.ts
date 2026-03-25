@@ -93,6 +93,36 @@ describe("Substance", () => {
     expect(d.name).toBe("Sodium hypochlorite");
     expect(d.ec_number).toBe("231-668-3");
   });
+
+  test("fromCas valid CAS not in database", () => {
+    const substance = Substance.fromCas("8042-47-5", "Mineral oil");
+    expect(substance.casNumber).toBe("8042-47-5");
+    expect(substance.name).toBe("Mineral oil");
+    expect(substance.ecNumber).toBeNull();
+  });
+
+  test("fromCas with EC number", () => {
+    const substance = Substance.fromCas("8042-47-5", "Mineral oil", "232-455-8");
+    expect(substance.ecNumber).toBe("232-455-8");
+  });
+
+  test("fromCas invalid format throws error", () => {
+    expect(() => Substance.fromCas("invalid", "Test")).toThrow(InvalidCASError);
+  });
+
+  test("fromCas invalid checksum throws error", () => {
+    expect(() => Substance.fromCas("7681-52-8", "Test")).toThrow(InvalidCASError);
+  });
+
+  test("fromCas empty name throws error", () => {
+    expect(() => Substance.fromCas("8042-47-5", "")).toThrow(InvalidCASError);
+  });
+
+  test("fromCas strips whitespace", () => {
+    const substance = Substance.fromCas("  8042-47-5  ", "  Mineral oil  ");
+    expect(substance.casNumber).toBe("8042-47-5");
+    expect(substance.name).toBe("Mineral oil");
+  });
 });
 
 describe("HazardGroup", () => {
@@ -299,16 +329,15 @@ describe("SDSRecord", () => {
     ).toThrow(RecordConstructionError);
   });
 
-  test("empty substances fails", () => {
-    expect(() =>
-      SDSRecord.create({
-        title: "Test SDS",
-        productName: "Test Product",
-        substances: [],
-        hazards: HazardGroup.fromCodes(["H314"]),
-        precautions: PrecautionaryGroup.fromCodes(["P280"]),
-      })
-    ).toThrow(RecordConstructionError);
+  test("empty substances allowed", () => {
+    const record = SDSRecord.create({
+      title: "Test SDS",
+      productName: "Test Product",
+      substances: [],
+      hazards: HazardGroup.fromCodes(["H314"]),
+      precautions: PrecautionaryGroup.fromCodes(["P280"]),
+    });
+    expect(record.substances).toEqual([]);
   });
 });
 

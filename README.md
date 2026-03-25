@@ -145,8 +145,12 @@ const result = validator.validate(record);
 ### Substance
 
 ```typescript
-// Look up by CAS number (validates format and check digit)
+// Look up by CAS number (validates format, check digit, and database)
 const substance = Substance.lookup("7681-52-9");
+
+// Create from CAS number not in the database (validates format and check digit only)
+const substance2 = Substance.fromCas("8042-47-5", "Mineral oil");
+const substance3 = Substance.fromCas("8042-47-5", "Mineral oil", "232-455-8");
 
 // Properties
 substance.casNumber; // "7681-52-9"
@@ -156,6 +160,10 @@ substance.ecNumber; // "231-668-3" (may be null)
 // Convert to dict
 substance.toDict();
 ```
+
+**When to use `lookup()` vs `fromCas()`:**
+- Use `lookup()` when the CAS number should be in the toolkit's internal registry. It returns the substance with its canonical name and EC number.
+- Use `fromCas()` when processing real-world SDSs where the CAS number is valid but may not be in the registry. It validates the CAS format and check digit but accepts any name you provide.
 
 ### HazardGroup
 

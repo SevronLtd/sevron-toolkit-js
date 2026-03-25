@@ -85,6 +85,47 @@ export class Substance {
   }
 
   /**
+   * Create a Substance from a CAS number that may not be in the database.
+   *
+   * Validates CAS format and check digit, but does not require the substance
+   * to exist in the internal registry. Use this when processing real-world SDSs
+   * where the substance is known but may not be in the toolkit's database.
+   *
+   * @param casNumber - The CAS registry number.
+   * @param name - The substance name.
+   * @param ecNumber - Optional EC (EINECS) number.
+   * @returns A Substance instance.
+   * @throws InvalidCASError if the CAS number is invalid or name is empty.
+   */
+  static fromCas(
+    casNumber: string,
+    name: string,
+    ecNumber: string | null = null
+  ): Substance {
+    casNumber = casNumber.trim();
+
+    if (!Substance.validateCasFormat(casNumber)) {
+      throw new InvalidCASError(
+        `Invalid CAS number format: '${casNumber}'. ` +
+          "Expected format: XXXXXXX-XX-X (e.g., 7681-52-9)"
+      );
+    }
+
+    if (!Substance.validateCasChecksum(casNumber)) {
+      throw new InvalidCASError(
+        `Invalid CAS number check digit: '${casNumber}'. ` +
+          "The check digit does not match the calculated value."
+      );
+    }
+
+    if (typeof name !== "string" || !name.trim()) {
+      throw new InvalidCASError("name must be a non-empty string");
+    }
+
+    return new Substance(casNumber, name.trim(), ecNumber, PRIVATE_CONSTRUCTOR);
+  }
+
+  /**
    * Look up a substance by CAS number.
    * @param casNumber - The CAS registry number to look up.
    * @returns A Substance instance with the looked-up data.
